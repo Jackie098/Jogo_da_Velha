@@ -22,8 +22,9 @@ function atualizaMostrador(){
 
 function inicializarEspaco(){
     var espacos = document.getElementsByClassName("espaco");
-    for(var i = 0; i< espacos.length; i++){
-        espacos[i].addEventListener("click",function(){
+    
+    for(espaco of espacos){
+        espaco.addEventListener("click",() => {
             if(gameOver){return;}
 
             if(this.getElementsByTagName("img").length == 0){

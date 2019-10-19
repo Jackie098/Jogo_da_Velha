@@ -103,14 +103,16 @@ async function verificarVencedor(){
     }else if((b2==b1 && b2==b3 && b2!="") || (b2==a2 && b2==c2 && b2!="") || (b2==a3 && b2==c1 && b2!="")){
         vencedor = b2;
         if(b2==b1 && b2==b3){
-            if(vencedor == "X"){
-                B1.style.backgroundColor= "rgba(255, 0, 0, 0.404)";
-                B2.style.backgroundColor= "rgba(255, 0, 0, 0.404)";
-                B3.style.backgroundColor= "rgba(255, 0, 0, 0.404)";
-            }else if(vencedor == "O"){
-                B1.style.backgroundColor= "rgba(17, 0, 255, 0.404)";
-                B2.style.backgroundColor= "rgba(17, 0, 255, 0.404)";
-                B3.style.backgroundColor= "rgba(17, 0, 255, 0.404)";
+            switch(vencedor){
+                case "X":
+                    B1.style.backgroundColor= "rgba(255, 0, 0, 0.404)";
+                    B2.style.backgroundColor= "rgba(255, 0, 0, 0.404)";
+                    B3.style.backgroundColor= "rgba(255, 0, 0, 0.404)";
+                        break;
+                case "O":
+                    B1.style.backgroundColor= "rgba(17, 0, 255, 0.404)";
+                    B2.style.backgroundColor= "rgba(17, 0, 255, 0.404)";
+                    B3.style.backgroundColor= "rgba(17, 0, 255, 0.404)"
             }
         }else if(b2==a2 && b2==c2){
             if(vencedor == "X"){
@@ -145,7 +147,7 @@ async function verificarVencedor(){
                 B3.style.backgroundColor= "rgba(17, 0, 255, 0.404)";
                 C3.style.backgroundColor= "rgba(17, 0, 255, 0.404)";
             }
-        }/*else if(c3==c2 && c3==c1){                           // ERRO -- Não faz essa comparação e por isso não colore o background
+        }else if(c3==c2 && c3==c1){                           // ERRO -- Não faz essa comparação e por isso não colore o background
             if(vencedor == "X"){
                 C1.style.backgroundColor= "rgba(255, 0, 0, 0.404)";
                 C2.style.backgroundColor= "rgba(255, 0, 0, 0.404)";
@@ -154,7 +156,8 @@ async function verificarVencedor(){
                 C1.style.backgroundColor= "rgba(17, 0, 255, 0.404)";
                 C2.style.backgroundColor= "rgba(17, 0, 255, 0.404)";
                 C3.style.backgroundColor= "rgba(17, 0, 255, 0.404)";
-            }*/
+            }
+        }
     }else if ((a1 && a2 && a3 && c1 && c2 && c3 && b1 && b2 && b3) && a1 !=""){
         await sleep(50);
         alert(" Deu velha!");

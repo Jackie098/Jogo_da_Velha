@@ -1,0 +1,58 @@
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;   
+}
+body{
+    background-color: rgba(45, 2, 95, 0.822);
+}
+
+#mostrador {
+    margin:auto;        /* Na ordem em que está, o sistema sobrescreverá as margens do top e botton e auto na direita e esquerda*/
+    margin-top: 40px;
+    margin-bottom: 10px;
+    height: 100px;
+    background-color: rgba(119, 0, 255, 0.534);
+}
+
+#jogador{
+    float: left;
+    margin-right: 10px;
+}
+
+.espaco{
+    width: 110px;
+    height: 110px;
+    border-radius: 45px;
+    padding: 3px;
+    border: 2px solid rgba(0, 247, 255, 0.267);
+    float: left;
+    background-color: rgba(169, 169, 169, 0.301);
+}
+
+.tabuleiro{
+    width: 420px;
+    margin-left: 36.55%;   
+}
+
+button{
+    width: 85px;
+    height: 30px;
+}
+
+#reset{
+    position: absolute;
+    margin-top: 30%;
+    margin-left: 46.70%;
+}
+
+p {
+    padding-left: 43.55%;
+    padding-top: 35px;
+    color: white;
+}
+
+.desc_img{
+    padding-top: 10px;
+}
+

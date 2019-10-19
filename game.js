@@ -6,6 +6,7 @@ var gameOver = false;
 atualizaMostrador();
 inicializarEspaco();
 
+var vencedor = "";
 
 function atualizaMostrador(){
     if(gameOver){
@@ -54,8 +55,6 @@ async function verificarVencedor(){
     var c1 = document.getElementById("c1").getAttribute("jogada");
     var c2 = document.getElementById("c2").getAttribute("jogada");
     var c3 = document.getElementById("c3").getAttribute("jogada");
-
-    var vencedor = "";
 
     var A1 = document.getElementById("a1");
     var A2 = document.getElementById("a2");
@@ -178,31 +177,21 @@ function sleep(ms){
 
 var reset = document.querySelector('button');
 reset.onclick = function(){
-    var a1 = document.getElementById("a1").getAttribute("jogada");
-    var a2 = document.getElementById("a2").getAttribute("jogada");
-    var a3 = document.getElementById("a3").getAttribute("jogada");
-
-    var b1 = document.getElementById("b1").getAttribute("jogada");
-    var b2 = document.getElementById("b2").getAttribute("jogada");
-    var b3 = document.getElementById("b3").getAttribute("jogada");
-
-    var c1 = document.getElementById("c1").getAttribute("jogada");
-    var c2 = document.getElementById("c2").getAttribute("jogada");
-    var c3 = document.getElementById("c3").getAttribute("jogada");
-        
-    a1="";
-    a2="";
-    a3="";
-
-    b1="";
-    b2="";
-    b3="";
-
-    c1="";
-    c2="";
-    c3="";
-
+    
     gameOver = false;
     vencedor = "";
-       // playTime = player1;          
+    playTime = player1;
+
+    var espacos = document.getElementsByClassName("espaco");
+    for( espaco of espacos){
+        espaco.style.backgroundColor = 'rgba(169, 169, 169, 0.301)';
+        espaco.innerHTML = "";
+        espaco.setAttribute('jogada','');
+    }
+
+    inicializarEspaco();
+    atualizaMostrador();
+
+    console.log("RESET clicado") ;   
+    console.log(`Vencedor: ${vencedor} \nGameOver: ${gameOver} \nJogador: ${playTime}` );      
 }

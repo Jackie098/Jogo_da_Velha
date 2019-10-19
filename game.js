@@ -24,24 +24,21 @@ function inicializarEspaco(){
     var espacos = document.getElementsByClassName("espaco");
     
     for(espaco of espacos){
-        espaco.addEventListener("click",() => {
+        espaco.onclick = function(){
             if(gameOver){return;}
 
-            if(this.getElementsByTagName("img").length == 0){
-                if(playTime == player1) {
-                    this.innerHTML = "<img src='imagens/x_vermelho.png'>";
-                    this.setAttribute("jogada",player1);
-                    playTime = player2;
-                }else{
-                    this.innerHTML = "<img src='imagens/bola_azul_110x110.png'>";
-                    this.setAttribute("jogada",player2);
-                    playTime = player1;
-                }
+            if(playTime == player1) {
+                this.innerHTML = "<img src='imagens/x_vermelho.png'>";
+                this.setAttribute("jogada",player1);
+                playTime = player2;
+            }else{
+                this.innerHTML = "<img src='imagens/bola_azul_110x110.png'>";
+                this.setAttribute("jogada",player2);
+                playTime = player1;
+            }
             atualizaMostrador();
             verificarVencedor();
-            }
-
-        })
+        }
     } 
 }
 

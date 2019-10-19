@@ -176,31 +176,8 @@ function sleep(ms){
     return new Promise(resolve => setTimeout(resolve,ms));
 }
 
-function resetar(){
-    var reset = document.getElementById("reset");
-    reset.addEventListener("click",function(){
-        declarar_Atributo();
-        
-        a1="";
-        a2="";
-        a3="";
-
-        b1="";
-        b2="";
-        b3="";
-
-        c1="";
-        c2="";
-        c3="";
-
-        gameOver = false;
-        vencedor = "";
-       // playTime = player1;    
-       
-    })
-}
-
-function declarar_Atributo(){
+var reset = document.querySelector('button');
+reset.onclick = function(){
     var a1 = document.getElementById("a1").getAttribute("jogada");
     var a2 = document.getElementById("a2").getAttribute("jogada");
     var a3 = document.getElementById("a3").getAttribute("jogada");
@@ -212,4 +189,20 @@ function declarar_Atributo(){
     var c1 = document.getElementById("c1").getAttribute("jogada");
     var c2 = document.getElementById("c2").getAttribute("jogada");
     var c3 = document.getElementById("c3").getAttribute("jogada");
+        
+    a1="";
+    a2="";
+    a3="";
+
+    b1="";
+    b2="";
+    b3="";
+
+    c1="";
+    c2="";
+    c3="";
+
+    gameOver = false;
+    vencedor = "";
+       // playTime = player1;          
 }

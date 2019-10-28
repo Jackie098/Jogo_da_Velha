@@ -134,7 +134,7 @@ async function verificarVencedor(){
                 C1.style.backgroundColor= "rgba(17, 0, 255, 0.404)";
             }
         }
-    }else if ((c3==b3 && c3==a3) || (c3==c2 && c3==c1 && c3!="")) { // Mesma lógica anterior, apenas simplifiquei a representação do "diferente de vazio"
+    }else if ((c3==b3 && c3==a3) || (c3==c2 && c3==c1 && c3!="")) { 
         vencedor = c3;
         if(c3==b3 && c3==a3){
             if(vencedor == "X"){
@@ -146,7 +146,7 @@ async function verificarVencedor(){
                 B3.style.backgroundColor= "rgba(17, 0, 255, 0.404)";
                 C3.style.backgroundColor= "rgba(17, 0, 255, 0.404)";
             }
-        }else if(c3==c2 && c3==c1){                           // ERRO -- Não faz essa comparação e por isso não colore o background
+        }else if(c3==c2 && c3==c1){                           
             if(vencedor == "X"){
                 C1.style.backgroundColor= "rgba(255, 0, 0, 0.404)";
                 C2.style.backgroundColor= "rgba(255, 0, 0, 0.404)";

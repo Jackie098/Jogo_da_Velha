@@ -174,6 +174,7 @@ function verificarVencedor(){
         //alert("O ganhador foi o: '" +vencedor+"'");
         var resultado = document.getElementById('resultado');
         var p = document.createElement('p');
+        p.style.position = 'relative';
         var textP = document.createTextNode(`O vencedor foi o jogador ${vencedor}`);
         p.appendChild(textP);
         resultado.appendChild(p);

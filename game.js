@@ -23,7 +23,7 @@ function atualizaMostrador(){
 
 function inicializarEspaco(){
     var espacos = document.getElementsByClassName("espaco");
-    
+
     for(espaco of espacos){
         espaco.onclick = function(){
             if(gameOver){return;}
@@ -43,7 +43,7 @@ function inicializarEspaco(){
     } 
 }
 
-async function verificarVencedor(){
+function verificarVencedor(){
     var a1 = document.getElementById("a1").getAttribute("jogada");
     var a2 = document.getElementById("a2").getAttribute("jogada");
     var a3 = document.getElementById("a3").getAttribute("jogada");
@@ -158,16 +158,26 @@ async function verificarVencedor(){
             }
         }
     }else if ((a1 && a2 && a3 && c1 && c2 && c3 && b1 && b2 && b3) && a1 !=""){
-        await sleep(50);
-        alert(" Deu velha!");
+       var resultado = document.getElementById('resultado');
+       var p = document.createElement('p');
+       var textP = document.createTextNode(`Deu velha!`);
+       p.appendChild(textP);
+       resultado.appendChild(p);
+       gameOver = true;
     }
 
     if(vencedor != ""){
         gameOver = true;
 
-        await sleep(50); //Em ms
+        //await sleep(50); //Em ms
 
-        alert("O ganhador foi o: '" +vencedor+"'");
+        //alert("O ganhador foi o: '" +vencedor+"'");
+        var resultado = document.getElementById('resultado');
+        var p = document.createElement('p');
+        p.style.position = 'relative';
+        var textP = document.createTextNode(`O vencedor foi o jogador ${vencedor}`);
+        p.appendChild(textP);
+        resultado.appendChild(p);
     }
 }
 
@@ -177,7 +187,12 @@ function sleep(ms){
 
 var reset = document.querySelector('button');
 reset.onclick = function(){
-    
+    switch(vencedor){
+        case 'X':   console.log(`Jogador ${player1} venceu!`); break;
+        case 'O':   console.log(`Jogador ${player2} venceu!`); break;
+        default: console.log(`Deu velha!`);
+    }
+
     gameOver = false;
     vencedor = "";
     playTime = player1;

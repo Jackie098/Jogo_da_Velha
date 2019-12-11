@@ -31,8 +31,17 @@ body{
 }
 
 .tabuleiro{
+    display: block;
+    position: relative;
     width: 420px;
     margin-left: 36.55%;   
+}
+
+.resultado {
+    width: 300px;
+    height: auto;
+    background-color: burlywood;
+    color: brown;  
 }
 
 button{
@@ -41,9 +50,13 @@ button{
 }
 
 #reset{
+    /*display: inline;*/
     position: relative;
-    margin-top: 70px;
-    margin-left: 46.70%;
+    left: auto;
+    right: auto;
+    bottom: 5%;
+    /*margin-top: 70px;
+    margin-left: 46.70%;*/
 }
 
 p {
